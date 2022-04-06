@@ -12,6 +12,6 @@ spec:
       autoscaling.knative.dev/minScale: "1"
   source:
     git:
-      url: https://github.com/jgalvin98/java-test.git
+      url: https://github.com/jgalvin98/java-app.git
       ref:
         branch: main

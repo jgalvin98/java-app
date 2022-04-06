@@ -1,4 +1,4 @@
-SOURCE_IMAGE = os.getenv("SOURCE_IMAGE", default='dev.local/java-test-source')
+SOURCE_IMAGE = os.getenv("SOURCE_IMAGE", default='harbor.services.demo.jg-aws.com/jgalvin/java-test-source')
 LOCAL_PATH = os.getenv("LOCAL_PATH", default='.')
 NAMESPACE = os.getenv("NAMESPACE", default='default')
 
@@ -20,3 +20,5 @@ k8s_custom_deploy(
 
 k8s_resource('java-test', port_forwards=["8080:8080"],
             extra_pod_selectors=[{'serving.knative.dev/service': 'java-test'}])
+            
+allow_k8s_contexts('FE-jgalvin-new@tap-bootcamp-01.us-east-2.eksctl.io')
